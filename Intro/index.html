@@ -1,0 +1,62 @@
+<!--
+    Como adicionar CSS em um documento HTML?
+    
+    Primariamente há 4 formas de se fazer isso:
+        
+        1. inline: utilizando-se do atributo style - coloca tudo em linha direto no elemento que quero;
+
+        2. tag <style>: tag HTML que irá conter o CSS
+
+        3. tag <link>: arquivo CSS externo
+
+        4. @import: arquivo CSS externo
+-->
+
+<!--
+    Forma 1: estilização diretamente no body, com escrita do HTML
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: red"> Título <em style="color: purple">Um (1)</em> </h1>
+    
+</body>
+</html>
+
+<!--
+    Forma 2: estilização feita no head, com a escrita do CSS na tag <style>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            color: red;
+        }
+
+        em {
+            color: purple;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Título <em>Dois (2)</em></h1>
+    
+</body>
+</html>
+
+

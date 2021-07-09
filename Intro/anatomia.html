@@ -1,0 +1,59 @@
+# Anatomia
+
+```css
+h1 {
+    color: blue;
+    font-size: 60px;
+    background: gray;
+}
+
+<!--
+
+- Selector: diz o tipo de tag a ser procurada no HTML; todas estas tags presentes no documento sofreriam a aplicação das propriedades descritas. No caso acima, o h1 é o selector. 
+
+- Declaration: toda esta parte a seguir
+{
+    color: blue;
+    font-size: 60px;
+    background: gray;
+}
+
+- Properties: seria o color, front-size e background
+
+- Property Value: seria o color:blue; e os outros
+
+
+-->
+
+<!--
+    Shorthand
+
+    Exemplos...:
+-->
+
+background-color: #000;
+background-image: url (images/bg.gif);
+background-repeat: no-repeat;
+background-position: left top;
+
+<!--
+    Background shorthand
+-->
+
+background: #000 url (images-bg.gif) no-repeat left top;
+
+font-style: italic;
+font-weight: bold;                      
+font-size: .8em;
+line-height: 1.2;
+font-family: Arial, sans-serif;
+
+<!--
+    Font shorthand
+-->
+
+font: italic bold .8em/1.2 Arial, sans-serif;
+
+<!--
+    OBS: caso alterações fossem feitas na estrutura completa, não iria alterar nada pois a forma shorthand se sobescreve sobre ela, assim, apenas as alterações na shorthand é que contam
+-->

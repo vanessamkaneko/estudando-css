@@ -1,0 +1,18 @@
+@import 'https://fonts.googleapis.com/css2?family=Limelight&display=swap';
+
+
+h1 {
+    color:palevioletred;
+    font-family: 'Limelight', cursive;
+}
+
+em {
+    color: greenyellow;
+}
+
+/* Forma 4: @import
+            - usa-se no documento css, no início do código
+            - pode usar com a função url ou sem
+            - é preferível que se use a tang link ao invés do @import por ser mais rápido
+*/
+
