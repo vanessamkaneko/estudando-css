@@ -1,0 +1,139 @@
+# CSS Grid
+
+- É bidimensional (diferente do FlexBox que é unidimensional: ou coluna ou linha);
+- Faz a divisão da página em linhas e colunas;
+- Grid complementa o FlexBox e vice-versa;
+- Verificar quais navegadores ainda não estão aceitando o Grid;
+
+## Propriedades
+- Separadas em 2 grupos: container e items;
+
+## container
+- display: grid;
+- grid-template-columns: especifica quantas colunas terá o layout e o tamanho delas;
+  *OBS sobre o fr:
+    *** 1fr significa uma fração (1 fraction), o grid vai magicamente calcular quanto espaço 1fr vale e mostra o resultado na tela.
+  Por exemplo, caso você tenha uma <div> com 400px de largura (width), e queremos dividir essa área em três colunas, duas pequenas à direita e à esquerda com 100px de largura cada, e uma maior no meio com 200px de largura, podemos escrever da seguinte forma: 
+  (grid-template-columns: 1fr 2fr 1fr;)
+  O grid dividirá a largura do elemento baseado nas frações que você informou. E equivale a escrever:
+  (grid-template-columns: 25% 50% 25%;) ***
+
+- grid-template-rows: especifica quantas linhas terá o layout e o tamanho de cada uma;
+- grid-gap: espaçamentos (se atribuir só 1 valor, vale p/ row e column - senão, primeiro é para row e depois p/ column)
+  - grid-row-gap: entre linhas
+  - grid-column-gap: entre colunas
+- grid-template-areas: delimita áreas
+... e mais 4 propriedades de alinhamento
+
+## item(s)
+- grid-column: posicionamento na coluna - posso simplesmente escrever grid-column: 1/3 (start na 1 e end na 3)
+  - grid-column-start
+  - grid-column-end
+- grid-row: posicionamento na linha - posso escrever igual a column
+  - grid-row-start
+  - grid-row-end
+- grid-areas
+... e mais 2 propriedades de alinhamento
+
+
+HTML
+
+<div class="container">
+  <header></header>
+  <main></main>
+  <aside></aside>
+  <footer></footer>
+</div>
+
+CSS
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #7159c1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr; // a primeira coluna fica bem maior que a primeira
+  grid-template-rows: 20vh 70vh 10vh; //pode ser em fr também
+  grid-template-areas: "header header"  
+                       "main aside"
+                       "footer footer"
+// o exemplo está sendo de: 2 colunas e 3 linhas - o exemplo acima pode ser lido como - na 1ª linha, as 2 colunas serão ocupadas pelo mesmo 'elemento', a segunda linha será ocupada por 2 elementos diferentes (cada um em uma coluna), e a terceira linha será igual a primeira (mas por um 'elemento' diferente)
+***os nomes dados estão atrelados à posição: por exemplo, o main está atrelado na primeira coluna e na segunda linha, assim como o header está atrelado na primeira e segunda coluna da primeira linha;
+***caso eu quisesse que meu header ocupasse só a primeira linha, o segunda valor poderia ser substuído por um ponto (.) - "header ."
+
+}
+
+header {
+  background: yellow;
+  grid-area: header;
+}
+
+main {
+  background: blue;
+  grid-area: main;
+  
+}
+
+aside {
+  background: green;
+  grid-area: aside;
+  
+}
+
+footer {
+  background: red;
+  grid-area: footer;
+}
+
+
+# Grid: Alinhamento
+  1. justify-content
+  2. align-content
+  3. justify-items
+  4. align-items
+  5. justify-self
+  6. align-self
+
+  Vamos separá-los em 2 grupos:
+  1. justify- e align- 
+  2. -content, -items e -self
+
+  ## Justify e align
+  - O Grid é bidimensional, portanto possui eixo X e Y 
+    - sendo o X posicionamento horizontal (esquerda -> direita) -> justify
+    - e Y posicionamento vertical (cima -> baixo) -> align
+
+  ## Content
+  - justify-content e align-content nos permite alinhar o próprio grid, relativo ao espaço fora do grid (no caso se o display: grid estiver em uma div, ele torna-se o grid)
+
+  - o uso dessas propriedades são raras, pois só são aplicadas caso o grid seja menor que a área definida (por exemplo, quando usamos em px o tamanho do grid, poderemos terminar com um grid pequeno em relação ao tamanho da área do grid)
+
+  - para justify-content (da esquerda p/ direita) e align-content (de cima para baixo) podem ser usados:
+    - start
+    - end
+    - center
+    - stretch
+    - space-between: fica um no começo, meio e fim
+    - space-around: dá um espaço ao redor dos elementos
+    - space-evenly: dá um espaço constante entre os elementos
+    *posso usar os dois ao mesmo tempo
+
+    ## items
+    - justify-items e align-items permite alinhar os items do nosso grid em qualquer espaço disponível, na célula que ele habitar
+    - possui 4 valores:
+      - start
+      - end
+      - center
+      - stretch
+
+      ## self
+      - justify-self e align-self vai nos permitir alinhar o item em si;
+
+      - faz a mesma coisa que o justify-items e align-items, porém aplicado diretamente ao item de um grid
+
+
+
